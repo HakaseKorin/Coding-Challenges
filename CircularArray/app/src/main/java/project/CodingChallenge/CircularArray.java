@@ -17,7 +17,7 @@ public class CircularArray<T> implements Iterable<T>{
 
     public int getHead(){return head;}
 
-    public void incrHead(){
+    void incrHead(){
         head = (head+1)%items.length;
     }
 
@@ -50,14 +50,14 @@ public class CircularArray<T> implements Iterable<T>{
         count--;
    }
 
-   public void resizeArray(){
+   void resizeArray(){
        T[] newList = (T[]) new Object[items.length*2];
        for (int i = 0; i < size(); i++)
            newList[i] = items[i];
        this.items = newList;
    }
 
-   public boolean isFull(){
+   boolean isFull(){
         return (count == size());
    }
 
