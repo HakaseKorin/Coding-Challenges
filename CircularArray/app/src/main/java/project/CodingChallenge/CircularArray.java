@@ -21,6 +21,30 @@ public class CircularArray<T> implements Iterable<T>{
         head = (head+1)%items.length;
     }
 
+    public void shiftForward(){
+        T[] newList = (T[]) new Object[items.length];
+
+        for (int i = 0; i < items.length; i++){
+            if(i+1 == items.length)
+                newList[0] = items[i];
+            else
+                newList[i+1] = items[i];
+        }
+        items = newList;
+    }
+
+    public void shiftBackward(){
+        T[] newList = (T[]) new Object[items.length];
+
+        for (int i = 0; i < items.length; i++){
+            if(i-1 < 0)
+                newList[items.length-1] = items[i];
+            else
+                newList[i-1] = items[i];
+        }
+        items = newList;
+    }
+
     public void rotateForward(){
         incrHead();
     }

@@ -75,4 +75,24 @@ public class CircularArrayTest extends TestCase {
         assertEquals("OneTwoThree",result);
     }
 
+    public void testShiftFoward(){
+        CircularArray<String> test = new CircularArray<>(3);
+        test.add("One");
+        test.add("Two");
+        test.add("Three");
+
+        test.shiftForward();
+        assertEquals("Three",test.get(0));
+    }
+
+    public void testShiftBackward(){
+        CircularArray<String> test = new CircularArray<>(3);
+        test.add("One");
+        test.add("Two");
+        test.add("Three");
+
+        test.shiftBackward();
+        assertEquals("Two", test.get(0));
+    }
+
 }
